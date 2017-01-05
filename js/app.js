@@ -70,6 +70,7 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
                 _this.busStops[i].nextDeparture = data;
             } // End if
         } // End for
+
     } // End insertToStops
 
     function refreshValues() {
