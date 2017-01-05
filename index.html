@@ -12,7 +12,10 @@
         <h1>St. Hanshaugen busstopp</h1>
 
         <section>
-
+            <div ng-repeat="departure in ruterCtrl.busStops">
+                <h3>{{ departure.name }}</h3>
+                <p>Neste avgang: {{ departure.nextDeparture.MonitoredCall.ExpectedArrivalTime | timeCalculate }}</p>
+            </div>
         </section>
     </div><!-- End container -->
 

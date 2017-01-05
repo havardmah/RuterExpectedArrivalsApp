@@ -9,6 +9,8 @@ ruterApp.filter('timeCalculate', function () {
         var receivedTime = new Date(x);
         var calculatedTime = Math.abs(time - receivedTime);
         var minutesLeft = (calculatedTime/1000/60) << 0;
+
+        if (minutesLeft == 0) return "Nå";
         return minutesLeft + " min";
     };
 }); // End timeCalculate
@@ -59,7 +61,6 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
     } // End filterDepartures
 
     function insertToStops(stopId, direction, data) {
-        console.log(stopId, direction, data);
         var stopLength = _this.busStops.length;
 
         for (var i = 0; i < stopLength; i++) {
@@ -67,9 +68,6 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
                 _this.busStops[i].nextDeparture = data;
             } // End if
         } // End for
-
-        console.log("departures", _this.busStops);
-
     } // End insertToStops
 
     function refreshValues() {
@@ -79,5 +77,6 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
     } // End filterDepartures
 
     refreshValues();
+    setInterval(refreshValues, 5000);
 
 }]); // End RuterController
