@@ -14,7 +14,7 @@
         <section>
             <div ng-repeat="departure in ruterCtrl.response">
                 <h3>{{ departure.name }}</h3>
-                <h4>{{ departure.nextDeparture.MonitoredVehicleJourney.LineRef + " " + departure.nextDeparture.MonitoredVehicleJourney.DestinationName }}</h4>
+                <h4 ng-if="departure.nextDeparture.MonitoredVehicleJourney.LineRef">{{ departure.nextDeparture.MonitoredVehicleJourney.LineRef + " " + departure.nextDeparture.MonitoredVehicleJourney.DestinationName }}</h4>
                 <p>{{ departure.nextDeparture.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime | timeCalculate }}</p>
             </div>
         </section>
