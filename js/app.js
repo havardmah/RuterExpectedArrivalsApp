@@ -18,6 +18,8 @@ ruterApp.filter('timeCalculate', function () {
 ruterApp.controller("RuterController", ["$http", function ($http) {
     var _this = this;
 
+    _this.count = 0;
+
     _this.busStops = [
             { id: 3010320, name: "St. Hanshaugen, ved Markus Kirke (retning øst)", direction: "1", nextDeparture: null },
             { id: 3010320, name: "St. Hanshaugen, ved Markus Kirke (retning vest)", direction: "2", nextDeparture: null },
@@ -74,6 +76,10 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
         for (var i = 0; i < _this.busStops.length; i++) {
             getBusDepartures(_this.busStops[i].id, _this.busStops[i].direction);
         }
+
+        // console.log(_this.busStops);
+        _this.count++;
+        console.log("go");
     } // End filterDepartures
 
     refreshValues();

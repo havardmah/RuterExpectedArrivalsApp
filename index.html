@@ -14,7 +14,8 @@
         <section>
             <div ng-repeat="departure in ruterCtrl.busStops">
                 <h3>{{ departure.name }}</h3>
-                <p>Neste avgang: {{ departure.nextDeparture.MonitoredCall.ExpectedArrivalTime | timeCalculate }}</p>
+                <h4>{{ departure.nextDeparture.LineRef + " " + departure.nextDeparture.DestinationName }}</h4>
+                <p>{{ departure.nextDeparture.MonitoredCall.ExpectedArrivalTime | timeCalculate }}</p>
             </div>
         </section>
     </div><!-- End container -->
