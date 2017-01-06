@@ -37,7 +37,8 @@ html, body {
     width: 130px;
     height: 130px;
     text-align: center;
-    margin: 0 auto; }
+    margin: 0 auto;
+    overflow: hidden; }
     .departures .departureCircles h4 {
       font-family: "Unica One", cursive;
       font-weight: bold;
@@ -49,9 +50,14 @@ html, body {
     .departures .departureCircles span {
       font-family: "Raleway", sans-serif;
       color: #19262F;
-      font-size: 1em;
+      font-size: .9em;
       font-style: italic;
-      margin-top: 5px; }
+      margin-top: 5px;
+      display: block;
+      text-overflow: ellipsis;
+      width: 95%;
+      white-space: nowrap;
+      overflow: hidden; }
     .departures .departureCircles p {
       margin: 10px auto 0 auto;
       font-family: "Unica One", cursive;

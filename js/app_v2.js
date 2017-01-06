@@ -53,6 +53,6 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
     } // End getBusDepartures
 
     _this.getBusDepartures();
-    setInterval(_this.getBusDepartures, 5000);
+    //setInterval(_this.getBusDepartures, 5000);
 
 }]); // End RuterController

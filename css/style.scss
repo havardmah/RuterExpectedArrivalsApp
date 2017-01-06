@@ -57,6 +57,7 @@ html, body {
     height: 130px;
     text-align: center;
     margin: 0 auto;
+    overflow: hidden;
 
     h4 {
       $font-size: 30px;
@@ -72,9 +73,14 @@ html, body {
     span {
       font-family: $mainFont;
       color: $weakDarkBlue;
-      font-size: 1em;
+      font-size: .9em;
       font-style: italic;
       margin-top: 5px;
+      display: block;
+      text-overflow: ellipsis;
+      width: 95%;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     p {
