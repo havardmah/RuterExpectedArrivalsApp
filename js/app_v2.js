@@ -14,7 +14,7 @@ ruterApp.filter('timeCalculate', function () {
             if (minutesLeft == 0) return "Nå";
             return minutesLeft + " min";
         } else {
-            return "Finner ikke avgang";
+            return "-";
         }
     };
 }); // End timeCalculate
@@ -22,11 +22,22 @@ ruterApp.filter('timeCalculate', function () {
 ruterApp.controller("RuterController", ["$http", function ($http) {
     var _this = this;
 
+    _this.loading = true;
+
     _this.getBusDepartures = function () {
         var apiUrl = "proxy_v2.php";
 
-        $http
-            .get(apiUrl)
+        $http.get(apiUrl)
+            .success(function (response) {
+                _this.response = response;
+            })
+            .catch(function (err) {
+                console.log("Error", err);
+            })
+            .finally(function () {
+                _this.loading = false;
+            });
+            /*
             .then(
                 // Success
                 function (response) {
@@ -37,6 +48,7 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
                     console.log("Error", response);
                 }
             ); // End http
+            */
 
     } // End getBusDepartures
 

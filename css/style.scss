@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Unica+One|Raleway');
+
+$mainFont: 'Raleway', sans-serif;
+$stylishFont: 'Unica One', cursive;
+
+$red: #F0544F;
+$white: #FFEEDB;
+$weakDarkBlue: #19262F;
+$darkBlue: #02111B;
+
+html, body {
+  margin: 0;
+  background-color: $darkBlue;
+}
+
+#container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+
+  h1 {
+    font-family: $stylishFont;
+    font-weight: normal;
+    color: $red;
+    text-align: center;
+  }
+}
+
+#loader {
+  text-align: center;
+  color: $red;
+}
+
+.departures {
+  width: 50%;
+  float: left;
+  margin-bottom: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  h3 {
+    font-weight: normal;
+    font-family: $mainFont;
+    color: $white;
+    text-align: center;
+    font-size: .9em;
+    margin: 0 0 15px 0;
+  }
+
+  .departureCircles {
+    display: block;
+    background-color: $red;
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    margin: 0 auto;
+
+    h4 {
+      $font-size: 30px;
+      font-family: $stylishFont;
+      font-weight: bold;
+      color: #02111B;
+      font-size: $font-size;
+      padding-top: 20px;
+      line-height: $font-size;
+      margin: 0;
+    }
+
+    span {
+      font-family: $mainFont;
+      color: $weakDarkBlue;
+      font-size: 1em;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    p {
+      margin: 10px auto 0 auto;
+      font-family: $stylishFont;
+      font-size: 1.4em;
+      color: $white;
+    }
+  }
+}

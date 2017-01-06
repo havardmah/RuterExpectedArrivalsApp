@@ -1,3 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Unica+One|Raleway");
+html, body {
+  margin: 0;
+  background-color: #02111B; }
 
+#container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto; }
+  #container h1 {
+    font-family: "Unica One", cursive;
+    font-weight: normal;
+    color: #F0544F;
+    text-align: center; }
+
+#loader {
+  text-align: center;
+  color: #F0544F; }
+
+.departures {
+  width: 50%;
+  float: left;
+  margin-bottom: 40px;
+  padding: 10px;
+  box-sizing: border-box; }
+  .departures h3 {
+    font-weight: normal;
+    font-family: "Raleway", sans-serif;
+    color: #FFEEDB;
+    text-align: center;
+    font-size: .9em;
+    margin: 0 0 15px 0; }
+  .departures .departureCircles {
+    display: block;
+    background-color: #F0544F;
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    margin: 0 auto; }
+    .departures .departureCircles h4 {
+      font-family: "Unica One", cursive;
+      font-weight: bold;
+      color: #02111B;
+      font-size: 30px;
+      padding-top: 20px;
+      line-height: 30px;
+      margin: 0; }
+    .departures .departureCircles span {
+      font-family: "Raleway", sans-serif;
+      color: #19262F;
+      font-size: 1em;
+      font-style: italic;
+      margin-top: 5px; }
+    .departures .departureCircles p {
+      margin: 10px auto 0 auto;
+      font-family: "Unica One", cursive;
+      font-size: 1.4em;
+      color: #FFEEDB; }
 
 /*# sourceMappingURL=style.css.map */
