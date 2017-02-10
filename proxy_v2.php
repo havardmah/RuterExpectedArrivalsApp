@@ -5,22 +5,22 @@ $stops = [
         "id" => 3010320,
         "name" => "St. Hanshaugen, ved Markus Kirke (retning øst)",
         "direction" => 1,
-        "nextDeparture" => null,
+        "nextDeparture" => [],
     ], [
         "id" => 3010320,
         "name" => "St. Hanshaugen, ved Markus Kirke (retning vest)",
         "direction" => 2,
-        "nextDeparture" => null,
+        "nextDeparture" => [],
     ], [
         "id" => 3010321,
         "name" => "St. Hanshaugen, ved Bergstien (retning øst)",
         "direction" => null,
-        "nextDeparture" => null,
+        "nextDeparture" => [],
     ], [
         "id" => 3010322,
         "name" => "St. Hanshaugen, ved Dalbergstien (retning vest)",
         "direction" => null,
-        "nextDeparture" => null,
+        "nextDeparture" => [],
     ]
 ]; // End stopIds
 
