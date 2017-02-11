@@ -59,6 +59,8 @@ function filterDepartures ($direction, $data) {
         } // End if/else
     } // End foreach
 
+    //print_r($result);
+
     return @$result[0];
 } // End filterDepartures
 

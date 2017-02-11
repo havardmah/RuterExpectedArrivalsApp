@@ -1,7 +1,8 @@
 /**
  * Created by Håvard on 03.01.2017.
+ * ngGeolocation: https://github.com/ninjatronic/ngGeolocation
  */
-var ruterApp = angular.module("ruterApp", []);
+var ruterApp = angular.module("ruterApp", ['ngGeolocation']);
 
 ruterApp.filter('timeCalculate', function () {
     return function (x) {
@@ -19,10 +20,26 @@ ruterApp.filter('timeCalculate', function () {
     };
 }); // End timeCalculate
 
-ruterApp.controller("RuterController", ["$http", function ($http) {
+ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http, $geolocation) {
     var _this = this;
 
     _this.loading = true;
+    _this.pos = null;
+    _this.interval = null;
+
+    _this.init = function () {
+        $geolocation.getCurrentPosition({
+            timeout: 60000,
+            enableHighAccuracy: true
+        }).then(function(position) {
+            _this.pos = position.coords;
+
+            console.log(_this.pos);
+
+            _this.getBusDepartures();
+            _this.interval = setInterval(_this.getBusDepartures, 5000);
+        });
+    }; // End init
 
     _this.getBusDepartures = function () {
         var apiUrl = "proxy_v2.php";
@@ -50,9 +67,8 @@ ruterApp.controller("RuterController", ["$http", function ($http) {
             ); // End http
             */
 
-    } // End getBusDepartures
+    }; // End getBusDepartures
 
-    _this.getBusDepartures();
-    setInterval(_this.getBusDepartures, 5000);
+    _this.init();
 
 }]); // End RuterController
