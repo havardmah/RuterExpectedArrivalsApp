@@ -22,9 +22,17 @@
     <div id="container">
         <h1>Spot On</h1>
 
-        <div id="loader">
-            <i ng-show="ruterCtrl.loading" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+        <div ng-show="ruterCtrl.loading" id="loader">
+            <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
             <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="errorMsgs big" ng-show="ruterCtrl.error">
+            Vi klarte ikke å finne din lokasjon!
+        </div>
+
+        <div class="errorMsgs bright" ng-show="!ruterCtrl.locStatus">
+            For at Spot On skal fungere, så trenger vi din lokasjon
         </div>
 
         <section>

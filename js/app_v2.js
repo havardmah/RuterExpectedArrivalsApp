@@ -23,7 +23,9 @@ ruterApp.filter('timeCalculate', function () {
 ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http, $geolocation) {
     var _this = this;
 
-    _this.loading = true;
+    _this.loading = false;
+    _this.locStatus = false;
+    _this.error = false;
     _this.interval = null;
     _this.x = null;
     _this.y = null;
@@ -33,6 +35,10 @@ ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http
             timeout: 60000,
             enableHighAccuracy: true
         }).then(function(position) {
+
+            _this.locStatus = true;
+            _this.loading = true;
+
             var pos = position.coords;
 
             var utm = _this.latLonToUTM(pos.latitude, pos.longitude);
@@ -41,6 +47,8 @@ ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http
 
             _this.getBusDepartures();
             //_this.interval = setInterval(_this.getBusDepartures, 5000);
+        }, function (err) {
+            _this.error = true;
         });
     }; // End init
 
@@ -49,7 +57,6 @@ ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http
 
         $http.get(apiUrl)
             .success(function (response) {
-                console.log(response);
                 _this.response = response;
             })
             .catch(function (err) {

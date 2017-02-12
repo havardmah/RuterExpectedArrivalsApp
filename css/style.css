@@ -13,6 +13,18 @@ html, body {
     color: #F0544F;
     text-align: center; }
 
+.errorMsgs {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  color: #F0544F;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1em; }
+  .errorMsgs.big {
+    font-size: 1.3em; }
+  .errorMsgs.bright {
+    color: #FFEEDB; }
+
 #loader {
   text-align: center;
   color: #F0544F; }

@@ -28,6 +28,23 @@ html, body {
   }
 }
 
+.errorMsgs {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  color: $red;
+  font-family: $mainFont;
+  font-size: 1.1em;
+
+  &.big {
+    font-size: 1.3em;
+  }
+
+  &.bright {
+    color: $white;
+  }
+}
+
 #loader {
   text-align: center;
   color: $red;
