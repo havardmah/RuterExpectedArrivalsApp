@@ -18,10 +18,10 @@ html, body {
   color: #F0544F; }
 
 .departures {
-  width: 50%;
+  width: 100%;
   float: left;
-  margin-bottom: 40px;
-  padding: 10px;
+  margin-bottom: 30px;
+  padding: 0 20px;
   box-sizing: border-box; }
   .departures h3 {
     font-weight: normal;
@@ -30,6 +30,36 @@ html, body {
     text-align: center;
     font-size: .9em;
     margin: 0 0 15px 0; }
+  .departures .depTables {
+    display: block;
+    border-radius: 3px;
+    overflow: hidden; }
+    .departures .depTables .depTablesH {
+      background-color: #F0544F;
+      padding: 8px 0;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      color: #FFEEDB; }
+    .departures .depTables .depTablesR {
+      padding: 10px 15px;
+      overflow: hidden;
+      color: #FFEEDB;
+      font-size: 1.2em; }
+      .departures .depTables .depTablesR:nth-child(odd) {
+        background-color: #273239; }
+      .departures .depTables .depTablesR:nth-child(even) {
+        background-color: #19262F; }
+      .departures .depTables .depTablesR .depsLines {
+        width: 75%;
+        float: left;
+        font-family: "Raleway", sans-serif; }
+        .departures .depTables .depTablesR .depsLines .lineNumbers {
+          font-family: "Unica One", cursive; }
+      .departures .depTables .depTablesR .depsExpecteds {
+        width: 25%;
+        float: left;
+        text-align: right;
+        font-family: "Unica One", cursive; }
   .departures .departureCircles {
     display: block;
     background-color: #F0544F;

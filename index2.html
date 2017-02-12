@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="ruterApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spot On B&B</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon" />
+
+    <!-- Apple webapp optimization -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="img/icon.jpg">
+    <link rel="apple-touch-startup-image" href="img/loadImg.jpg" />
+    <!-- Apple webapp optimization end -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+</head>
+<body ng-controller="RuterController as ruterCtrl">
+
+<div id="container">
+    <h1>Spot On</h1>
+
+    <div id="loader">
+        <i ng-show="ruterCtrl.loading" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <section>
+        <div class="departures" ng-repeat="departure in ruterCtrl.response">
+            <h3>{{ departure.name }}</h3>
+            <div class="departureCircles">
+                <h4 ng-if="departure.nextDeparture.MonitoredVehicleJourney.LineRef">{{ departure.nextDeparture.MonitoredVehicleJourney.LineRef }}</h4>
+                <span ng-if="departure.nextDeparture.MonitoredVehicleJourney.DestinationName">{{ departure.nextDeparture.MonitoredVehicleJourney.DestinationName }}</span>
+                <p>{{ departure.nextDeparture.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime | timeCalculate }}</p>
+            </div>
+        </div>
+    </section>
+</div><!-- End container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js/ngGeolocation.js"></script>
+<script src="js/app_v2.js"></script>
+</body>
+</html>

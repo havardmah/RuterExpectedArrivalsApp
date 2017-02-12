@@ -40,7 +40,7 @@ ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http
             _this.y = parseInt(utm[1]);
 
             _this.getBusDepartures();
-            _this.interval = setInterval(_this.getBusDepartures, 5000);
+            //_this.interval = setInterval(_this.getBusDepartures, 5000);
         });
     }; // End init
 
@@ -49,6 +49,7 @@ ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http
 
         $http.get(apiUrl)
             .success(function (response) {
+                console.log(response);
                 _this.response = response;
             })
             .catch(function (err) {
