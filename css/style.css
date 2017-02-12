@@ -54,12 +54,19 @@ html, body {
         float: left;
         font-family: "Raleway", sans-serif; }
         .departures .depTables .depTablesR .depsLines .lineNumbers {
-          font-family: "Unica One", cursive; }
+          font-family: "Unica One", cursive;
+          font-weight: bold; }
       .departures .depTables .depTablesR .depsExpecteds {
         width: 25%;
         float: left;
         text-align: right;
         font-family: "Unica One", cursive; }
+      .departures .depTables .depTablesR .errors {
+        font-family: "Raleway", sans-serif;
+        color: #F0544F;
+        text-align: center;
+        display: block;
+        width: 100%; }
   .departures .departureCircles {
     display: block;
     background-color: #F0544F;

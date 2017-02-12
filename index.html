@@ -31,9 +31,12 @@
             <div class="departures" ng-repeat="stop in ruterCtrl.response">
                 <div class="depTables">
                     <div class="depTablesH">{{ stop.info.Name }}</div>
-                    <div class="depTablesR" ng-repeat="dep in stop.deps">
+                    <div class="depTablesR" ng-if="stop.deps.length > 0" ng-repeat="dep in stop.deps">
                         <span class="depsLines" ng-if="dep.LineRef"><span class="lineNumbers">{{ dep.LineRef }}</span> {{ dep.DestinationName }}</span>
                         <span class="depsExpecteds">{{ dep.MonitoredCall.ExpectedArrivalTime | timeCalculate }}</span>
+                    </div>
+                    <div class="depTablesR" ng-if="stop.deps.length == 0">
+                        <span class="errors">Ikke trafikk</span>
                     </div>
                 </div>
                 <!--

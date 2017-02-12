@@ -83,6 +83,7 @@ html, body {
 
         .lineNumbers {
           font-family: $stylishFont;
+          font-weight: bold;
         }
       }
 
@@ -91,6 +92,14 @@ html, body {
         float: left;
         text-align: right;
         font-family: $stylishFont;
+      }
+
+      .errors {
+        font-family: $mainFont;
+        color: $red;
+        text-align: center;
+        display: block;
+        width: 100%;
       }
     }
   }
