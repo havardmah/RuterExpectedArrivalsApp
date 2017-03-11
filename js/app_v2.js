@@ -53,7 +53,7 @@ ruterApp.controller("RuterController", ["$http", "$geolocation", function ($http
     }; // End init
 
     _this.getBusDepartures = function () {
-        var apiUrl = "proxy_v3.php?coords=" + _this.x + "," + _this.y;
+        var apiUrl = "proxy_v3.php?deps&coords=" + _this.x + "," + _this.y;
 
         $http.get(apiUrl)
             .success(function (response) {
